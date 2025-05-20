@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:alpine
+    env_file: .env.db
+    container_name: postgres_cultivos
+    environment:
+      POSTGRES_DB: cultivos
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./Base-de-Datos--main/Datos:/csv
